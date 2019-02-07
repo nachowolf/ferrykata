@@ -1,0 +1,65 @@
+<h1>Hello World boiiii</h1>
+{{#if messages.error1}}
+         <div class='error'>
+           <h3>{{messages.error1}}</h3>
+
+         </div>{{/if}}
+<form action="/createFerry" method="POST">
+<input type="number" placeholder="parking space" name='parkingSpace'>
+<input type="number" placeholder=" passenger seats" name='passengerSeats'>
+<input type="submit" value='submit'>
+</form>
+
+<h3>{{messages.success}}</h3>
+<h1>Max Parking Space: {{ferry.maxParking}}</h1>
+<h1>Max Passenger Seating: {{ferry.maxSeats}}</h1>
+<h1>Current cars parked: {{ferry.currentParking}}</h1>
+<h1>Current seats taken: {{ferry.currentSeats}}</h1>
+<h1>Ferry parking lot: </h1>
+{{#each ferry.parkingLot}}
+
+{{!-- <ul>
+    <h3>Car</h3>
+    <li><h3>color: {{color}}</h3></li>
+    <li><h3>passengers: {{passengers}}</h3></li>
+
+</ul> --}}
+<div class='ticket'>
+    <div class='ticket-inner'>
+    <div class='ticket-front'>
+    <div class='car'>
+        <i class='fas fa-car fa-5x' id='{{color}}'></i>        
+    </div>
+    <div class='passengers'><i class='far fa-user fa-3x'></i> <h1> X {{passengers}}</h1></div>
+</div>
+<div class='ticket-back'>
+    <h1>hello world</h1>
+</div>
+</div>
+</div>
+
+{{/each}}
+
+{{#if messages.error2}}
+         <div class='error'>
+           <h3>{{messages.error2}}</h3>
+
+         </div>{{/if}}
+
+{{#if messages.accepted}}
+         <div class='error'>
+           <h3>{{messages.accepted}}</h3>
+
+         </div>{{/if}}
+
+         {{#if messages.declined}}
+         <div class='error'>
+           <h3>{{messages.declined}}</h3>
+
+         </div>{{/if}}
+
+<form action="/boardFerry" method="POST">
+<input type="text" placeholder="color" name='carColor'>
+<input type="number" placeholder=" passengers" name='carPassengers'>
+<input type="submit" value='submit'>
+</form>

@@ -1,0 +1,52 @@
+.ticket{
+    display: inline-block;
+    margin-left:20px;
+    border:solid;
+    background-color: transparent;
+    width:20vw;
+    height:20vh;
+
+}
+
+.ticket-inner{
+    position: relative;
+    width:100%;
+    height:100%; 
+    transform-style: preserve-3d;
+    text-align: center;
+}
+
+.car, .passengers{
+    
+    position: relative;
+    display: inline-block;
+    /* padding:1px; */
+    
+}
+
+.passengers{
+    border:solid;
+    background-color:gray;
+    color:white;
+    border:black;
+}
+
+.ticket:hover .ticket-inner{
+transform: rotateY(180deg);
+
+}
+
+.ticket-front{
+    position: absolute;
+    width:100%;
+    height:100%;
+    backface-visibility: hidden;
+   
+}
+.ticket-back{
+    position: absolute;
+    width:100%;
+    height:100%;
+backface-visibility: hidden;
+transform: rotateY(180deg);
+}
